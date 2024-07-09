@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: rgb(38, 38, 38);
+        background-color: rgb(07, 07, 07);
         filter: invert(0.85) hue-rotate(165deg);
     }
     
