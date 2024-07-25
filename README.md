@@ -1,16 +1,6 @@
 # Nightshift
 
-This Safari extension enables dark-mode on websites.
-
-You can enable or disable dark mode on a per site basis.
-
-![preview](https://i.imgur.com/rX5letn.png)
-
-
-## Download
-
-You can donwload the app in the [macOS AppStore](https://apps.apple.com/us/app/nightshift-dark-mode/id1561604170).
-
+A fork to try and add system setting dynamic dark mode.
 
 ## Build and Debug
 
