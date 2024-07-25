@@ -1,6 +1,26 @@
 // Normally this would be inside "DOMContenLoaded" event listener.
 // However, this works slightly faster and helps avoid white screen.
-safari.extension.dispatchMessage("nightshift", {"host": window.location.host});
+
+// Function to check if dark mode is enabled
+function isDarkMode() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+// Function to send a message to toggle dark mode based on the current appearance
+function toggleDarkMode() {
+  const darkmode = isDarkMode();
+  safari.extension.dispatchMessage("nightshift", {
+    "host": window.location.host,
+    "darkmode": darkmode
+  });
+}
+
+// Initial setup
+toggleDarkMode(); // Initial check when the script loads
+
+// Add an event listener to handle changes in appearance
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', toggleDarkMode);
+
 safari.self.addEventListener("message", handleMessage);
 
 function handleMessage(event) {
